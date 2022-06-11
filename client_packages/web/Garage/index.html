@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>   
+    <title>Garage</title>
+</head>
+<body>
+<div id="left-container">
+    <div class="garageiconbg"><i class="fa-solid fa-garage-car icnowad"></i></div>
+    <div class="tab-itemcontainer">
+        <div class="tab" onclick="changeTab('fahrzeuge')" id="tab-fahrzeuge" style="background-color: #2268d3;">Fahrzeuge</div>
+        <div class="tab" onclick="changeTab('bikes')" id="tab-bikes">Bikes</div>
+        <div class="tab" onclick="changeTab('privatfahrzeuge')" id="tab-privatfahrzeuge">Privat Fahrzeuge</div>
+    </div>
+</div>
+<div id="container">
+    <i class="fas fa-close" onclick="closeGarage()"></i>
+    <input type="text" placeholder="Fahrzeugname" id="vehiclename" onkeyup="updateVehicleInput();">
+    <div id="garage-itemcontainer">
+
+    </div>
+
+    <div id="garage-itemcontainer-bike">
+
+    </div>
+
+    <div id="garage-itemcontainer-privatfahrzeuge">
+
+    </div>
+</div>
+<button class="btn" onclick="carausparken()">Ausparken</button>
+</body>
+<script>
+let currentTab = 0;
+
+function changeTab(tabname)
+{
+    document.getElementById("tab-fahrzeuge").style.background = "rgb(12, 12, 12)";
+    document.getElementById("tab-bikes").style.background = "rgb(12, 12, 12)";
+    document.getElementById("tab-privatfahrzeuge").style.background = "rgb(12, 12, 12)";
+    document.getElementById("garage-itemcontainer").style.display = "none";
+    document.getElementById("garage-itemcontainer-bike").style.display = "none";
+    document.getElementById("garage-itemcontainer-privatfahrzeuge").style.display = "none";
+
+    document.getElementById("tab-"+tabname).style.background = "#2268d3";
+
+    document.getElementById("vehiclename").value = null;
+
+    switch (tabname) {
+        case "fahrzeuge":
+        document.getElementById("garage-itemcontainer").style.display = "block";
+        currentTab = 0;
+        break;
+        case "bikes":
+        document.getElementById("garage-itemcontainer-bike").style.display = "block";
+        currentTab = 1;
+        break;
+        case "privatfahrzeuge":
+        document.getElementById("garage-itemcontainer-privatfahrzeuge").style.display = "block";
+        currentTab = 2;
+        break;
+    }
+}
+
+let vehiclelist = new Array();
+let bikelist = new Array();
+let privatlist = new Array();
+
+let starcarshtml = new Array();
+
+let createdCars = 0;
+let selectedCar = null;
+
+function loadstarcars(starcarid)
+{
+    starcarshtml.push(starcarid);
+}
+
+function selectCar(carname)
+{
+    if (selectedCar == null)
+    {
+        document.getElementById("garagevehiclename-"+carname).style.background = "#2268d3";
+        selectedCar = carname;
+    } else {
+        document.getElementById("garagevehiclename-"+selectedCar).style.background = "rgb(20, 20, 20)";
+        document.getElementById("garagevehiclename-"+carname).style.background = "#2268d3";
+        selectedCar = carname;
+    }
+}
+
+
+function createCar(carname, level){
+    if (!starcarshtml.includes(createdCars))
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-light fa-star false" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+        `)
+        vehiclelist.push(carname);
+        createdCars++;
+        $("#garage-itemcontainer").append($html)
+    }
+    else
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-solid fa-star true" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+        `)
+        vehiclelist.push(carname);
+        createdCars++;
+        $("#garage-itemcontainer").prepend($html)
+    } 
+}
+
+function createBike(carname, level){
+    if (starcarshtml.includes(createdCars))
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-solid fa-star true" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+            `)
+            bikelist.push(carname);
+            createdCars++;
+            $("#garage-itemcontainer-bike").prepend($html)
+        }
+    else
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-light fa-star false" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+        `)
+        bikelist.push(carname);
+        createdCars++;
+        $("#garage-itemcontainer-bike").append($html)
+    } 
+}
+
+function createprivatCar(carname, level){
+    if (starcarshtml.includes(createdCars))
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-solid fa-star true" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+            `)
+            privatlist.push(carname);
+            createdCars++;
+            $("#garage-itemcontainer-privatfahrzeuge").prepend($html)
+        }
+    else
+    {
+        var $html = $(`
+            <div class="garage-vehicle-item" id="garagevehiclename-${carname}" onclick="selectCar('${carname}')">
+                <i class="fa-light fa-star false" id="garageitembyid-${createdCars}" onclick="changeStarState(${createdCars})"></i>
+                <i class="fa-solid fa-garage-car"></i>
+                <label class="vehiclename">${carname}</label>
+                <label class="vehiclelevel">Level: <span id="garagevehiclelevel-${carname}">${level}</span></label>
+            </div>
+        `)
+        privatlist.push(carname);
+        createdCars++;
+        $("#garage-itemcontainer-privatfahrzeuge").append($html)
+    } 
+}
+
+function carausparken()
+{
+    if (selectedCar == null) return;
+    let carlevel = document.getElementById("garagevehiclelevel-"+selectedCar).textContent;
+    mp.trigger("GGW:ClientEvent:Garage:Ausparken", selectedCar, parseInt(carlevel))
+}
+
+function loadCars()
+{
+    //Fahrzeuge
+    createCar("Sentinel", 0);
+    createCar("Cogcabrio", 0);
+    createCar("Oracle", 1);
+    createCar("Felon", 2);
+    createCar("Zion", 3);
+    createCar("Exemplar", 4);
+    createCar("F620", 5);
+    createCar("Schafter4", 10);
+    createCar("Windsor2", 10);
+    createCar("Impaler", 15);
+    createCar("Gauntlet", 15);
+    createCar("Faction2", 15);
+    createCar("Dominator", 15);
+    createCar("Buccaneer", 15);
+    createCar("Coquette3", 15);
+    createCar("Virgo", 20);
+    createCar("Tulip", 20);
+    createCar("Voodoo", 20);
+    createCar("Dominator7", 25);
+    createCar("Dominator3", 30);
+    createCar("Vagrant", 35);
+    createCar("Buzzard2", 35);
+    createCar("Serrano", 40);
+    createCar("Tailgater2", 45);
+    createCar("Elegy", 50);
+    createCar("Issi7", 55);
+    createCar("Zr350", 60);
+    createCar("Sultan3", 65);
+    createCar("Revolter", 70);
+    createCar("Volatus", 80);
+
+    //Bikes
+    createBike("Avarus", 0);
+    createBike("Daemon", 5);
+    createBike("Hexer", 10);
+    createBike("Sanchez", 15);
+    createBike("Manchez", 20);
+    createBike("Akuma", 25);
+    createBike("Bagger", 30);
+    createBike("Stryder", 30);
+    createBike("Bati", 35);
+    createBike("Bf400", 40);
+    createBike("Double", 45);
+    createBike("Esskey", 50);
+    createBike("Vindicator", 55);
+    createBike("Vortex", 60);
+    createBike("Thrust", 65);
+    createBike("Vader", 70);
+    createBike("Hakuchou", 75);
+    createBike("Hakuchou2", 80);
+    createBike("Shotaro", 90);
+}
+//$(".garage-itemcontainer").prepend($html) //Vorher
+//$(".garage-itemcontainer").append($html) //Nachher
+
+let changed = false;
+
+function changeStarState(id)
+{
+    if ($('#garageitembyid-'+id).hasClass("false"))
+    {
+        $('#garageitembyid-'+id).removeClass("false");
+        $('#garageitembyid-'+id).addClass("true");
+
+        $('#garageitembyid-'+id).removeClass("fa-light");
+        $('#garageitembyid-'+id).addClass("fa-solid");
+
+        mp.trigger("GGW:Garage:AddStarCar", id);
+    } else {
+        $('#garageitembyid-'+id).addClass("false");
+        $('#garageitembyid-'+id).removeClass("true");
+
+        $('#garageitembyid-'+id).removeClass("fa-solid");
+        $('#garageitembyid-'+id).addClass("fa-light");
+
+        mp.trigger("GGW:Garage:RemoveStarCar", id);
+    }
+}
+
+function updateVehicleInput()
+{
+    let vname = document.getElementById("vehiclename").value;
+    if (currentTab == 0)
+    {
+        vehiclelist.forEach(function(item, index, array) {
+            if (item.startsWith(vname))
+            {
+                document.getElementById("garagevehiclename-"+item).style.display = "inline-block";
+            } else {
+                document.getElementById("garagevehiclename-"+item).style.display = "none";
+            }
+        });
+    } 
+    else if (currentTab == 1)
+    {
+        bikelist.forEach(function(item, index, array) {
+            if (item.startsWith(vname))
+            {
+                document.getElementById("garagevehiclename-"+item).style.display = "inline-block";
+            } else {
+                document.getElementById("garagevehiclename-"+item).style.display = "none";
+            }
+        });
+    }
+    else if (currentTab == 2)
+    {
+        privatlist.forEach(function(item, index, array) {
+            if (item.startsWith(vname))
+            {
+                document.getElementById("garagevehiclename-"+item).style.display = "inline-block";
+            } else {
+                document.getElementById("garagevehiclename-"+item).style.display = "none";
+            }
+        });
+    }
+}
+
+function closeGarage()
+{
+    mp.trigger("GGW:CloseUI:Garage");
+}
+</script>
+</html>

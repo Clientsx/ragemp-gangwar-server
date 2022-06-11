@@ -1,0 +1,216 @@
+*{
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf');
+}
+
+body{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 0.3vw;
+    height: 0vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: #3a3636d3;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #2268d3;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #1056c0;
+}
+
+.fa-close{
+    position: absolute;
+    right: 1.25vw;
+    top: 1vw;
+    color: white;
+    font-size: 1.25vw;
+}
+
+.fa-close:hover{
+    transition: 2s;
+    color: red;
+}
+
+#left-container{
+    position: absolute;
+    left: 20vw;
+    top: 16vw;
+    width: 14.8vw;
+    background: rgb(12, 12, 12);
+    height: 25vw;
+    border-top-left-radius: 0.1vw;
+    border-bottom-left-radius: 0.1vw;
+    border-right: #2268d3 0.2vw solid;
+}
+
+.garageiconbg{
+    position: absolute;
+    width: 12.8vw;
+    height: 12.8vw;
+    border-radius: 0.1vw;
+    background-color: transparent;
+    top: 1vw;
+    left: 1vw;
+    text-align: center;
+    font-size: 6vw;
+}
+
+#container{
+    background: rgb(12, 12, 12);
+    position: absolute;
+    left: 35vw;
+    top: 16vw;
+    height: 25vw;
+    width: 44vw;
+    border-top-right-radius: 0.1vw;
+    border-bottom-right-radius: 0.1vw;
+}
+
+#garage-itemcontainer{
+    position: absolute;
+    left: 0.5vw;
+    width: 42.1vw;
+    background-color: transparent;
+    top: 3.5vw;
+    overflow: scroll;
+    height: 20.5vw;
+}
+
+#garage-itemcontainer-bike{
+    position: absolute;
+    left: 0.5vw;
+    width: 42.1vw;
+    background-color: transparent;
+    top: 3.5vw;
+    overflow: scroll;
+    height: 20.5vw;
+    display: none;
+}
+
+#garage-itemcontainer-privatfahrzeuge{
+    position: absolute;
+    left: 0.5vw;
+    width: 42.1vw;
+    background-color: transparent;
+    top: 3.5vw;
+    overflow: scroll;
+    height: 20.5vw;
+    display: none;
+}
+
+.fa-garage-car{
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    left: 0.5vw;
+    top: 1vw;
+}
+
+.fa-star{
+    position: absolute;
+    color: goldenrod;
+    font-size: 0.7vw;
+    right: 0.25vw;
+    top: 0.25vw;
+}
+
+.garage-vehicle-item{
+    background-color: rgb(20, 20, 20);
+    position: relative;
+    display: inline-block;
+    width: 10vw;
+    height: 4vw;
+    border-radius: 0.1vw;
+    top: -0.25vw;
+    margin-top: 0.25vw;
+    margin-left: 0.25vw;
+}
+
+.vehiclename{
+    position: absolute;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 0.8vw;
+    left: 4vw;
+    top: 1vw;
+}
+
+.vehiclelevel{
+    position: absolute;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 0.8vw;
+    left: 4vw;
+    top: 2vw;
+}
+
+#vehiclename{
+    position: absolute;
+    background-color: transparent;
+    overflow: hidden;
+    border: transparent;
+    outline: none;
+    border-bottom: #2268d3 0.125vw solid;
+    color: white;
+    font-size: 0.7vw;
+    font-family: 'Nunito';
+    position: absolute;
+    left: 1vw;
+    top: 1vw;
+    width: 30vw;
+}
+
+.icnowad{
+    position: absolute;
+    left: 2vw;
+    top: 2.75vw;
+    font-size: 7vw;
+}
+
+.tab-itemcontainer{
+    position: absolute;
+    left: 0vw;
+    width: 100%;
+    background-color: transparent;
+    height: 9vw;
+    top: 15vw;
+}
+
+.tab{
+    position: relative;
+    width: 100%;
+    background-color: rgb(12, 12, 12);
+    height: 3vw;
+    margin: 0;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 0.9vw;
+    text-align: left;
+    padding-left: 1vw;
+    line-height: 3vw;
+}
+
+.btn{
+    border: transparent;
+    border-radius: 0.1vw;
+    background-color: #2268d3;
+    color: white;
+    font-family: 'Nunito';
+    height: 2vw;
+    font-size: 0.8vw;
+    width: 9vw;
+    position: absolute;
+    top: 41.5vw;
+    right: 21vw;
+}

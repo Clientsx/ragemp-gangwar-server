@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-close" onclick="closeInventar()"></i>
+        <div class="itemlistbox-container">
+
+        </div>
+        <div class="use-btn" onclick="use()">Benutzen</div>
+        <div class="give-btn" onclick="give()">Geben</div>
+        <div class="drop-btn" onclick="drop()">Wegwerfen</div>
+
+        <input type="number" id="amount-input" placeholder="Anzahl" value="1" min="1" max="9999" maxlength="3" minlength="1">
+    </div>
+</body>
+<script>
+let createdItems = 0;
+let selectedItem = null;
+
+function closeInventar()
+{
+    mp.trigger("GGW:CloseInventar")
+}
+
+function createItem(inventorydata)
+{
+    inventorydata = JSON.parse(inventorydata);
+    for (let i = 0; i < inventorydata.length; i++) {
+        if(inventorydata[i].Itemvalue > 0){
+            var $html = $(`
+            <div class="itembox default" onclick="selectItem(${createdItems})" id="itemboxbyid-${createdItems}">
+                <label class="itemname" id="itemnamebyid-${createdItems}">${inventorydata[i].Itemname}</label>
+                <img class="itemimage" src="./img/${inventorydata[i].Itemname}.png" alt="${inventorydata[i].Itemname}">
+                <label class="itemamount" id="itemamountbyid-${createdItems}">${inventorydata[i].Itemvalue}</label>
+            </div>
+                `)
+            $(".itemlistbox-container").prepend($html)
+            createdItems++;    
+        }
+    }
+}
+
+function selectItem(id)
+{
+    if (selectedItem == null)
+    {
+        document.getElementById("itemboxbyid-"+id).style.backgroundColor = "#2e6bdb";
+        document.getElementById("itemamountbyid-"+id).style.backgroundColor = "rgba(5, 5, 5, 0.651)";
+        selectedItem = id;
+    } else {
+        document.getElementById("itemboxbyid-"+selectedItem).style.backgroundColor = "rgba(5, 5, 5, 0.651)";
+        document.getElementById("itemamountbyid-"+selectedItem).style.backgroundColor = "#2e6bdb";
+        document.getElementById("itemboxbyid-"+id).style.backgroundColor = "#2e6bdb";
+        document.getElementById("itemamountbyid-"+id).style.backgroundColor = "rgba(5, 5, 5, 0.651)";
+        selectedItem = id;
+    }
+}
+
+function use(){
+    if (selectedItem == null) return;
+    let itemname = document.getElementById("itemnamebyid-"+selectedItem).textContent;
+    mp.trigger("Inventar:UseItem", itemname);
+}
+
+function give(){
+    if (selectedItem == null) return;
+    let itemamount = document.getElementById("amount-input").value;
+    if (itemamount.length < 1) return;
+    if (itemamount <= 0) return;
+    if (itemamount > 9999) return;
+    let itemname = document.getElementById("itemnamebyid-"+selectedItem).textContent;
+    mp.trigger("Inventar:GiveItem", itemname, parseInt(itemamount));
+}
+
+function drop(){
+    if (selectedItem == null) return;
+    let itemamount = document.getElementById("amount-input").value;
+    if (itemamount.length < 1) return;
+    if (itemamount <= 0) return;
+    if (itemamount > 9999) return;
+    let itemname = document.getElementById("itemnamebyid-"+selectedItem).textContent;
+    mp.trigger("Inventar:DropItem", itemname, parseInt(itemamount));
+}
+</script>
+</html>

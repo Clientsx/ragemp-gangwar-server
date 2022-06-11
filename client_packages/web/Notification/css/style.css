@@ -1,0 +1,50 @@
+*{
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf');
+}
+
+body{
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    align-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.notify{
+    position: relative;
+    top: 1vh;
+    margin-top: 0.5vh;
+    right: 2vh;
+    width: 30vh;
+    height: 6.25vh;
+    background-color: rgb(12, 12, 12);
+    border-radius: 0.1vw;
+}
+
+.title{
+    position: absolute;
+    left: 1vh;
+    top: 1vh;
+    font-size: 1.15vh;
+    color: white;
+    font-family: 'Nunito';
+}
+
+.text{
+    position: absolute;
+    left: 1vh;
+    top: 2.8vh;
+    font-size: 1.45vh;
+    color: white;
+    font-family: 'Nunito';
+}

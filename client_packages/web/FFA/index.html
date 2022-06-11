@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>   
+    <title>FFA</title>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-close" onclick="closeFFA()"></i>
+        <div class="itembox" id="itemboxbyid-1" onclick="selectffa(1)">
+            <label class="ffaname">FFA - Würfelpark</label>
+            <label class="ffauser" id="ffamember-1">15 Mitglieder</label>
+        </div>
+        <div class="itembox" id="itemboxbyid-2" onclick="selectffa(2)">
+            <label class="ffaname">FFA - LS Supply</label>
+            <label class="ffauser" id="ffamember-2">15 Mitglieder</label>
+        </div>
+        <div class="itembox" id="itemboxbyid-3" onclick="selectffa(3)">
+            <label class="ffaname">FFA - Sandy Shores</label>
+            <label class="ffauser" id="ffamember-3">15 Mitglieder</label>
+        </div>
+        <button id="play-button" onclick="joinffa()">Beitreten</button>
+    </div>
+</body>
+<script>
+let clicked = false;
+let selectedFFA = null;
+
+
+function selectffa(id){
+    document.getElementById("itemboxbyid-1").style.backgroundColor = "rgb(20, 20, 20)";
+    document.getElementById("itemboxbyid-2").style.backgroundColor = "rgb(20, 20, 20)";
+    document.getElementById("itemboxbyid-3").style.backgroundColor = "rgb(20, 20, 20)";
+
+    document.getElementById("itemboxbyid-"+id).style.backgroundColor = "#2268d3";
+    selectedFFA = id;
+}
+
+function updateFFA(p1, p2, p3)
+{
+    document.getElementById("ffamember-1").innerText = `${p1} Mitglieder`;
+    document.getElementById("ffamember-2").innerText = `${p2} Mitglieder`;
+    document.getElementById("ffamember-3").innerText = `${p3} Mitglieder`;
+}
+
+function closeFFA()
+{
+    mp.trigger("GGW:CloseUI:FFA")
+}
+
+function joinffa(){
+    if (selectedFFA == null) return;
+    mp.trigger("GGW:ClientEvent:TryJoinFFA", selectedFFA)
+}
+</script>
+</html>

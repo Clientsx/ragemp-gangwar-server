@@ -1,0 +1,99 @@
+*{
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf');
+}
+
+body{
+    background-color: transparent;
+    display: none;
+}
+
+.topline{
+    position: absolute;
+    top: 14.25vw;
+    left: 30vw;
+    width: 45vw;
+    height: 0.75vw;
+    background: #2e6bdb;
+    border-top-left-radius: 0.1vw;
+    border-top-left-radius: 0.1vw;
+}
+
+.container{
+    font-family: 'Nunito';
+    color: white;
+    background-color: rgb(12, 12, 12);
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    width: 15vw;
+    height: 35vw;
+    border-radius: 0.1vw;
+    position: absolute;
+    top: 10vw;
+    right: 1vw;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 0.3vw;
+    height: 0vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: #3a3636d3;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #2268d3;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #1056c0;
+}
+
+.fa-close{
+    position: absolute;
+    right: 1vw;
+    top: 0.25vw;
+    color: white;
+    font-size: 1.25vw;
+}
+
+.fa-close:hover{
+    transition: 2s;
+    color: red;
+}
+
+.weaponitems-itembox{
+    position: absolute;
+    left: 0.25vw;
+    width: 13.5vw;
+    top: 1.75vw;
+    height: 32.5vw;
+    overflow: scroll;
+}
+
+.weaponitems{
+    position: relative;
+    width: 12vw;
+    height: 2vw;
+    left: 0.5vw;
+    border-radius: 0.1vw;
+    background-color: rgba(5, 5, 5, 0.651);
+    margin-right: 0.25vw;
+    margin-top: 0.25vw;
+}
+
+.weaponicon{
+    position: absolute;
+    height: 1.25vw;
+    left: 0.5vw;
+    top: .5vw;
+}

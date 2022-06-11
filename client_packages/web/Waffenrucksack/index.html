@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+</head>
+<body id="body">
+    <div class="container">
+        <i class="fas fa-close" onclick="closeWeaponrucksack()"></i>
+        <div class="weaponitems-itembox">
+
+            <div class="weaponitems" id="Pistol" style="background-color: #2268d3;" onclick="toggleWeapon('Pistol', '0x1B06D571')">
+                <img src="./img/Pistol.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Pistol50" style="background-color: #2268d3;" onclick="toggleWeapon('Pistol50', '0x99AEEB3B')">
+                <img src="./img/Pistol50.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Pistol_Mk2" style="background-color: #2268d3;" onclick="toggleWeapon('Pistol_Mk2', '0xBFE256D4')">
+                <img src="./img/Pistol_Mk2.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Heavypistol" style="background-color: #2268d3;" onclick="toggleWeapon('Heavypistol', '0xD205520E')">
+                <img src="./img/Heavypistol.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Doubleaction" style="background-color: #2268d3;" onclick="toggleWeapon('Doubleaction', '0xA89CB99E')">
+                <img src="./img/Doubleaction.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Revolver" style="background-color: #2268d3;" onclick="toggleWeapon('Revolver', '0xA89CB99E')">
+                <img src="./img/Revolver.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Machinepistol" style="background-color: #2268d3;" onclick="toggleWeapon('Machinepistol', '0xDB1AA450')">
+                <img src="./img/Machinepistol.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Microsmg" style="background-color: #2268d3;" onclick="toggleWeapon('Microsmg', '0x13532244')">
+                <img src="./img/Microsmg.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Minismg" style="background-color: #2268d3;" onclick="toggleWeapon('Minismg', '0xBD248B55')">
+                <img src="./img/Minismg.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Smg" style="background-color: #2268d3;" onclick="toggleWeapon('Smg', '0x2BE6766B')">
+                <img src="./img/Smg.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Smg_Mk2" style="background-color: #2268d3;" onclick="toggleWeapon('Smg_Mk2', '0x78A97CD0')">
+                <img src="./img/Smg_Mk2.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Combatpdw" style="background-color: #2268d3;" onclick="toggleWeapon('Combatpdw', '0x0A3D4D34')">
+                <img src="./img/Combatpdw.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Assaultrifle" style="background-color: #2268d3;" onclick="toggleWeapon('Assaultrifle', '0xBFEFFF6D')">
+                <img src="./img/Assaultrifle.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Advancedrifle" style="background-color: #2268d3;" onclick="toggleWeapon('Advancedrifle', '0xAF113F99')">
+                <img src="./img/Advancedrifle.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Bullpuprifle" style="background-color: #2268d3;" onclick="toggleWeapon('Bullpuprifle', '0x7F229F94')">
+                <img src="./img/Bullpuprifle.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Carbinerifle" style="background-color: #2268d3;" onclick="toggleWeapon('Carbinerifle', '0x83BF0278')">
+                <img src="./img/Carbinerifle.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Carbinerifle_Mk2" style="background-color: #2268d3;" onclick="toggleWeapon('Carbinerifle_Mk2', '0xFAD1F1C9')">
+                <img src="./img/Carbinerifle_Mk2.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Compactrifle" style="background-color: #2268d3;" onclick="toggleWeapon('Compactrifle', '0x624FE830')">
+                <img src="./img/Compactrifle.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Assaultrifle_Mk2" style="background-color: #2268d3;" onclick="toggleWeapon('Assaultrifle_Mk2', '0x394F415C')">
+                <img src="./img/Assaultrifle_Mk2.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Specialcarbine" style="background-color: #2268d3;" onclick="toggleWeapon('Specialcarbine', '0xC0A3098D')">
+                <img src="./img/Specialcarbine.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Pumpshotgun" style="background-color: #2268d3;" onclick="toggleWeapon('Pumpshotgun', '0x1D073A89')">
+                <img src="./img/Pump-shotgun-icon.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Heavyshotgun" style="background-color: #2268d3;" onclick="toggleWeapon('Heavyshotgun', '0x3AABBBAA')">
+                <img src="./img/Heavy-shotgun-icon.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Gusenberg" style="background-color: #2268d3;" onclick="toggleWeapon('Gusenberg', '0x61012683')">
+                <img src="./img/Gusenberg-sweeper-icon.webp" class="weaponicon">
+            </div>
+
+            <div class="weaponitems" id="Musket" style="background-color: #2268d3;" onclick="toggleWeapon('Musket', '0xA89CB99E')">
+                <img src="./img/Musket-icon.webp" class="weaponicon">
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    let Pistol = true,
+    Pistol50 = true,
+    Pistol_Mk2 = true,
+    Heavypistol = true,
+    Revolver = true,
+    Doubleaction = true,
+    Machinepistol = true,
+    Microsmg = true,
+    Minismg = true,
+    Smg = true,
+    Smg_Mk2 = true,
+    Combatpdw = true,
+    Assaultrifle = true,
+    Advancedrifle = true,
+    Bullpuprifle = true,
+    Carbinerifle = true,
+    Carbinerifle_Mk2 = true,
+    Compactrifle = true,
+    Assaultrifle_Mk2 = true,
+    Specialcarbine = true,
+    Pumpshotgun = true,
+    Heavyshotgun = true,
+    Gusenberg = true,
+    Musket = true;
+
+    function toggleWeapon(weaponname, weaponhash)
+    {
+        switch (weaponname) {
+            case "Pistol":
+                if (Pistol)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Pistol = !Pistol;
+            break;
+            case "Pistol50":
+                if (Pistol50)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Pistol50 = !Pistol50;
+            break;
+            case "Pistol_Mk2":
+                if (Pistol_Mk2)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Pistol_Mk2 = !Pistol_Mk2;
+            break;
+            case "Heavypistol":
+                if (Heavypistol)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Heavypistol = !Heavypistol;
+            break;
+            case "Revolver":
+                if (Revolver)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Revolver = !Revolver;
+            break;
+            case "Doubleaction":
+                if (Doubleaction)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Doubleaction = !Doubleaction;
+            break;
+            case "Machinepistol":
+                if (Machinepistol)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Machinepistol = !Machinepistol;
+            break;
+            case "Microsmg":
+                if (Microsmg)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Microsmg = !Microsmg;
+            break;
+            case "Minismg":
+                if (Minismg)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Minismg = !Minismg;
+            break;
+            case "Smg":
+                if (Smg)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Smg = !Smg;
+            break;
+            case "Smg_Mk2":
+                if (Smg_Mk2)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Smg_Mk2 = !Smg_Mk2;
+            break;
+            case "Combatpdw":
+                if (Combatpdw)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Combatpdw = !Combatpdw;
+            break;
+            case "Assaultrifle":
+                if (Assaultrifle)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Assaultrifle = !Assaultrifle;
+            break;
+            case "Advancedrifle":
+                if (Advancedrifle)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Advancedrifle = !Advancedrifle;
+            break;
+            case "Bullpuprifle":
+                if (Bullpuprifle)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Bullpuprifle = !Bullpuprifle;
+            break;
+            case "Carbinerifle":
+                if (Carbinerifle)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Carbinerifle = !Carbinerifle;
+            break;
+            case "Carbinerifle_Mk2":
+                if (Carbinerifle_Mk2)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Carbinerifle_Mk2 = !Carbinerifle_Mk2;
+            break;
+            case "Compactrifle":
+                if (Compactrifle)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Compactrifle = !Compactrifle;
+            break;
+            case "Assaultrifle_Mk2":
+                if (Assaultrifle_Mk2)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Assaultrifle_Mk2 = !Assaultrifle_Mk2;
+            break;
+            case "Specialcarbine":
+                if (Specialcarbine)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Specialcarbine = !Specialcarbine;
+            break;
+            case "Pumpshotgun":
+                if (Pumpshotgun)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Pumpshotgun = !Pumpshotgun;
+            break;
+            case "Heavyshotgun":
+                if (Heavyshotgun)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Heavyshotgun = !Heavyshotgun;
+            break;
+            case "Gusenberg":
+                if (Gusenberg)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Gusenberg = !Gusenberg;
+            break;
+            case "Musket":
+                if (Musket)
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#db342e";
+                    mp.trigger("tryDeactivateWeapon", weaponname);
+                }
+                else
+                {
+                    document.getElementById(`${weaponname}`).style.backgroundColor = "#2268d3";
+                    mp.trigger("tryActivateWeapon", weaponname);
+                }
+                Musket = !Musket;
+            break;
+        
+            default:
+            break;
+        }
+    }
+
+    function closeWeaponrucksack()
+    {
+        mp.trigger("GGW:CloseUI::Waffenrucksack")
+    }
+
+    function toggleWeaponpack(value)
+    {
+        switch (value) {
+            case true:
+            document.getElementById("body").style.display = "block";
+            break;
+            case false:
+                document.getElementById("body").style.display = "none";
+            break;
+        
+            default:
+                break;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,193 @@
+*{
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf');
+}
+.container{
+    font-family: 'Nunito';
+    color: white;
+    background-color: rgb(20, 20, 20);
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 0.15vw;
+    position: absolute;
+    top: 17.5vw;
+    left: 35vw;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 0vw;
+    height: 0vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: #3a3636d3;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgba(46, 107, 219, 0.692);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(46, 107, 219);
+}
+
+.itemlistbox-container{
+    position: absolute;
+    left: 0.2vw;
+    width: 24.6vw;
+    top: 2vw;
+    height: 20.4vw;
+    background-color: transparent;
+    overflow: scroll;
+}
+
+.fa-close{
+    position: absolute;
+    right: 0.65vw;
+    top: 0.5vw;
+    color: white;
+    font-size: 1.25vw;
+}
+
+.fa-close:hover{
+    transition: 2s;
+    color: red;
+}
+
+.itembox{
+    position: relative;
+    border-radius: 0.15vw;
+    margin-top: 0.25vw;
+    margin-left: 0.25vw;
+    width: 5vw;
+    height: 5vw;
+    background-color: rgba(5, 5, 5, 0.651);
+    display: inline-block;
+}
+
+.itembox:hover{
+    background-color: #2268d3;
+}
+
+.itemimage{
+    position: absolute;
+    left: 0.8vw;
+    top: 0.7vw;
+    height: 3.5vw;
+}
+
+.itemamount{
+    position: absolute;
+    background-color: #2268d3;
+    border-radius: 10vw;
+    min-height: 1vw;
+    max-height: 1vw;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+    width: auto;
+    font-size: 0.7vw;
+    min-width: 0.3vw;
+    right: 0.15vw;
+    bottom: 0.15vw;
+}
+
+.itemname{
+    font-size: 0.1vw;
+    color: transparent;
+}
+
+.use-btn{
+    position: absolute;
+    left: 0.5vw;
+    bottom: 0.5vw;
+    height: 1.8vw;
+    width: 6vw;
+    border-radius: 0.15vw;
+    opacity: 1;
+    background-color: #2268d3;
+
+    text-align: center;
+    line-height: 2vw;
+    transition: 1s;
+    color: white;
+    font-size: 0.8vw;
+}
+
+.use-btn:hover{
+    transition: 500ms;
+    background-color: #114da7;
+}
+
+.give-btn{
+    position: absolute;
+    left: 7vw;
+    bottom: 0.5vw;
+    height: 1.8vw;
+    width: 6vw;
+    border-radius: 0.15vw;
+    opacity: 1;
+    background-color: #2268d3;
+
+    text-align: center;
+    line-height: 2vw;
+    transition: 1s;
+    color: white;
+    font-size: 0.8vw;
+}
+
+.give-btn:hover{
+    transition: 500ms;
+    background-color: #114da7;
+}
+
+.drop-btn{
+    position: absolute;
+    left: 13.5vw;
+    bottom: 0.5vw;
+    height: 1.8vw;
+    width: 6vw;
+    border-radius: 0.15vw;
+    opacity: 1;
+    background-color: #2268d3;
+
+    text-align: center;
+    line-height: 2vw;
+    transition: 1s;
+    color: white;
+    font-size: 0.8vw;
+}
+
+.drop-btn:hover{
+    transition: 500ms;
+    background-color: #114da7;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+#amount-input{
+    position: absolute;
+    right: 1.5vw;
+    bottom: 0.75vw;
+    height: 1.5vw;
+    background-color: transparent;
+    outline: transparent;
+    color: white;
+    font-family: 'Nunito';
+    font-size: 0.7vw;
+    border: transparent;
+    border-bottom: #2268d3 0.125vw solid;
+    text-align: center;
+}

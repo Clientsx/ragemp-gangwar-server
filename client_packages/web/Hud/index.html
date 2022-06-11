@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <div class="killiconbox"><i class="fa-solid fa-skull"></i></div>
+        <label id="kills">1</label>
+        <div class="deathiconbox"><i class="fa-solid fa-tombstone"></i></div>
+        <label id="deaths">0</label>
+        <div class="kdiconbox"><i class="fa-solid fa-circle-dot"></i></div>
+        <label id="kd">0.21</label>
+
+        <label id="levelstate">Level: 15</label>
+        <label id="xpstate">50 / 300</label>
+        <div class="progressbar-level-container">
+            <div id="progressbar-value"></div>
+        </div>
+    </div>
+
+    <img src="./crosshair/crosshair-1.png" id="crosshair" alt="">
+
+    <label id="killerlabel">Du hast {killer} get&ouml;tet</label>
+
+    <div id="admin-container">ADMIN - DIENST</div>
+
+    <div id="vehicle-container"><label id="kmh">200 KM/H</label></div>
+
+    <div id="progressbar-container">
+        <div id="progressbar-container-value"></div>
+        <label id="progressbar-container-wert">0%</label>
+    </div>
+</body>
+<script>
+
+    function changeCrosshair(id)
+    {
+        if (id == 0)
+        {
+            document.getElementById("crosshair").src = null;
+        } 
+        else 
+        {
+            document.getElementById("crosshair").src = `./crosshair/crosshair-${id}.png`;
+        }
+    }
+    
+    function toggleAdmindienst(value)
+    {
+        switch (value) {
+            case true:
+                document.getElementById("admin-container").style.display = "block";
+            break;
+            case false:
+                document.getElementById("admin-container").style.display = "none";
+            break;
+        }
+    }
+
+    function toggleVehicleHud(value)
+    {
+        switch (value) {
+            case true:
+                document.getElementById("vehicle-container").style.display = "block";
+            break;
+            case false:
+                document.getElementById("vehicle-container").style.display = "none";
+            break;
+        }
+    }
+
+    function updateVehicleHud(speed)
+    {
+        document.getElementById("kmh").innerText = speed+" KM/H"
+    }
+
+    let killtimer;
+
+    function showKill(username) {
+        clearTimeout(killtimer);
+        document.getElementById("killerlabel").style.display = "block";
+        document.getElementById("killerlabel").innerText = `Du hast ${username} getötet`;
+        killtimer = setTimeout(() => {
+            document.getElementById("killerlabel").style.display = "none";
+        }, 3000);
+    }
+
+    function getProzentOfValue(prozentwert, grundwert) 
+    {     
+        return ((prozentwert / grundwert) * 100).toFixed(0); 
+    }
+
+    function updateHud(kills, deaths, xp, maxxp, level)
+    {
+        document.getElementById("kills").innerText = kills;
+        document.getElementById("deaths").innerText = deaths;
+        let kdd = kills / deaths;
+        document.getElementById("kd").innerText = `${kdd.toFixed(2)}`;
+        document.getElementById("xpstate").innerText = `${xp} / ${maxxp}`;
+        document.getElementById("progressbar-value").style.width = `${getProzentOfValue(xp, maxxp)}%`;
+        document.getElementById("levelstate").innerText = `Level: ${level}`
+    }
+
+    let timer;
+    let progressbarvalue = 0;
+
+    function startProgressbar(time)
+    {
+        document.getElementById("progressbar-container").style.display = `block`;
+        timer = setInterval(() => {
+            progressbarvalue += 25;
+            document.getElementById("progressbar-container-value").style.width = `${progressbarvalue}%`;
+            document.getElementById("progressbar-container-wert").innerText = progressbarvalue+"%";
+            if (progressbarvalue >= 100)
+            {
+                setTimeout(() => {
+                    document.getElementById("progressbar-container-value").style.width = `0%`;
+                    document.getElementById("progressbar-container-wert").innerText = "0%";
+                    progressbarvalue = 0;
+                    clearInterval(timer);
+                    document.getElementById("progressbar-container").style.display = `none`;
+                }, 500);
+            }
+        }, time / 4);
+    }
+
+    function killprogressbar()
+    {
+        document.getElementById("progressbar-container-value").style.width = `0%`;
+        document.getElementById("progressbar-container-wert").innerText = "0%";
+        progressbarvalue = 0;
+        clearInterval(timer);
+        document.getElementById("progressbar-container").style.display = `none`;
+    }
+</script>
+</html>

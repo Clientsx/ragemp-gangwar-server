@@ -1,0 +1,106 @@
+const Leveling = {
+    0: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D]
+    },
+    10: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B]
+    },
+    15: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4]
+    },
+    20: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278]
+    },
+    25: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D]
+    },
+    30: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA]
+    },
+    35: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E]
+    },
+    40: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E]
+    },
+    45: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830]
+    },
+    50: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55]
+    },
+    55: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8]
+    },
+    60: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89]
+    },
+    65: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C]
+    },
+    70: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1]
+    },
+    75: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450]
+    },
+    80: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34]
+    },
+    85: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34, 0xFAD1F1C9]
+    },
+    90: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34, 0xFAD1F1C9, 0x7F229F94]
+    },
+    95: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34, 0xFAD1F1C9, 0x7F229F94, 0x61012683]
+    },
+    100: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34, 0xFAD1F1C9, 0x7F229F94, 0x61012683, 0x99AEEB3B]
+    },
+    105: {
+        weapons: [0x1B06D571, 0x13532244, 0xBFEFFF6D, 0x2BE6766B, 0xBFE256D4, 0x83BF0278, 0xC0A3098D, 0x3AABBBAA, 0xA89CB99E, 0xD205520E, 0x624FE830, 0xBD248B55, 0x97EA20B8, 0x1D073A89, 0x394F415C, 0xC1B3C3D1, 0xDB1AA450, 0x0A3D4D34, 0xFAD1F1C9, 0x7F229F94, 0x61012683, 0x99AEEB3B, 0x78A97CD0, 0xAF113F99]
+    }
+}
+
+function setLevelWeapon(player, level)
+{
+    if (player.getVariable("isFFA")) return;
+    let prev = 0;
+    Object.keys(Leveling).some(k => {
+    if (k < level) {
+        for (let i = 0; i < Leveling[k].weapons.length; i++) {
+            player.giveWeapon(Leveling[k].weapons[i], 9999);
+        }
+    } 
+    prev = k
+    });
+    removeDisabledWeapon(player);
+}
+
+function removeDisabledWeapon(player)
+{
+    if (player.getVariable("isFFA")) return;
+    let oldweapondata = player.data.disabledweapon;
+    let newweapondata = oldweapondata.split("%");
+    for (let i = 0; i < newweapondata.length; i++) {
+        player.removeWeapon(mp.joaat("weapon_"+newweapondata[i]));
+    }
+}
+
+mp.events.add("GGW:tryDeactivateWeapon", (player, weaponname) => {
+    if (player.getVariable("isFFA")) return;
+    player.removeWeapon(mp.joaat("weapon_"+weaponname));
+    player.data.disabledweapon = `${player.data.disabledweapon}%${weaponname}`;
+});
+
+mp.events.add("GGW:tryActivateWeapon", (player, weaponname) => {
+    if (player.getVariable("isFFA")) return;
+    let oldweapondisableddata = player.data.disabledweapon;
+    let newweapondisableddata = oldweapondisableddata.replace("%"+weaponname, "");
+    player.data.disabledweapon = newweapondisableddata;
+    setLevelWeapon(player, player.getVariable("Level"))
+});
+
+module.exports = { setLevelWeapon }

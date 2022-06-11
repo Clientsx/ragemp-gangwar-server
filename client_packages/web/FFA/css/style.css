@@ -1,0 +1,94 @@
+*{
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf');
+}
+
+body{
+    background-color: transparent;
+}
+
+.container{
+    background-color: rgb(12, 12, 12);
+    position: absolute;
+    right: 1vw;
+    top: 15vw;
+    width: 20vw;
+    height: 15vw;
+    border-radius: 0.1vw;
+}
+
+.fa-close{
+    position: absolute;
+    right: 1.25vw;
+    top: 0.75vw;
+    color: white;
+    font-size: 1.25vw;
+}
+
+.fa-close:hover{
+    transition: 2s;
+    color: red;
+}
+
+.itembox{
+    top: 2.5vw;
+    position: relative;
+    left: 1vw;
+    width: 18vw;
+    height: 2vw;
+    border-radius: 0.1vw;
+    background-color: rgb(20, 20, 20);
+    margin-top: 0.25vw;
+    font-family: 'Nunito';
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 2vw;
+}
+
+.itembox:hover{
+    transition: 500ms;
+    background-color: #114da7;
+}
+
+#play-button{
+    border: transparent;
+    border-radius: 0.1vw;
+    background-color: #2268d3;
+    color: white;
+    font-family: 'Nunito';
+    height: 2vw;
+    font-size: 0.8vw;
+    width: 9vw;
+    position: absolute;
+    bottom: 0.5vw;
+    left: 5.5vw;
+}
+
+#play-button:hover{
+    transition: 500ms;
+    background-color: #114da7;
+}
+
+.ffaname{
+    color: white;
+    font-family: 'Nunito';
+    position: absolute;
+    left: 1vw;
+    top: 0.05vw;
+    font-size: 0.8vw;
+}
+
+.ffauser{
+    color: white;
+    font-family: 'Nunito';
+    position: absolute;
+    right: 1vw;
+    top: 0.05vw;
+    font-size: 0.6vw;
+}
